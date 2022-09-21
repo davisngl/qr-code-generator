@@ -8,7 +8,7 @@ use Endroid\QrCode\ErrorCorrectionLevel\ErrorCorrectionLevelHigh;
 use Endroid\QrCode\Label\Alignment\LabelAlignmentCenter;
 use Endroid\QrCode\Label\Font\NotoSans;
 use Endroid\QrCode\RoundBlockSizeMode\RoundBlockSizeModeMargin;
-use Endroid\QrCode\Writer\SvgWriter;
+use Endroid\QrCode\Writer\PngWriter;
 use Illuminate\Contracts\View\View;
 use Livewire\Component;
 
@@ -44,7 +44,7 @@ class QrCodeGenerator extends Component
     private function generateQrCode()
     {
         $this->generatedImage =  Builder::create()
-            ->writer(new SvgWriter())
+            ->writer(new PngWriter())
             ->writerOptions([])
             ->data($this->url)
             ->encoding(new Encoding('UTF-8'))
