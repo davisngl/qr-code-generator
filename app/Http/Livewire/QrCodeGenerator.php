@@ -52,9 +52,6 @@ class QrCodeGenerator extends Component
             ->size(300)
             ->margin(10)
             ->roundBlockSizeMode(new RoundBlockSizeModeMargin())
-            ->labelText('URL')
-            ->labelFont(new NotoSans(20))
-            ->labelAlignment(new LabelAlignmentCenter())
             ->build()
             ->getDataUri();
     }
